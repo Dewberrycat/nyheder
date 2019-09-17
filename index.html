@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="nyheder">
+<head>
+<meta charset="UTF-8">
+<title>Nyheder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="st.css">
+<link rel="stylesheet" href="libs/jquery.jqplot.min.css">
+<script src="libs/angular.min.js"></script>
+<script src="libs/angular-route.min.js"></script>
+<script src="libs/jquery.min.js"></script>
+<script src="libs/jquery.jqplot.min.js"></script>
+
+</head>
+<body>
+
+<div id="head">
+    <div class="container">
+        <a href="index.html" id="logo">
+             <img src="logo.png" alt="">
+        </a>
+    </div>
+</div>
+    
+<div id="menu">
+    <div class="container">
+            <a href="#" ng-click="ch('politik')">Политика</a>
+            <a href="#" class="active" ng-click="ch('kultur')">Культура</a>
+    </div>
+
+</div>
+
+<div id="content" ng-show="fuck">
+    <div class="container">
+        <div ng-repeat="x in temp">
+            <a href="#" ng-click="loadArt(x.link)">
+                <img src="{{x.img}}" alt="">
+                <div>
+                    <span>{{x.title}}</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="art" ng-show="!fuck">
+    <div class="container"></div>
+</div>
+
+<script>
+        angular.module("nyheder", ["ngRoute"])
+            .config(function($routeProvider){
+                $routeProvider.when("/politik", {templateUrl:"politik/politik.html"})
+            })
+            .run(function($rootScope, $http){
+                
+                $rootScope.fuck = true;
+                $rootScope.name = "";
+                $http.get('nyheder.json')
+                    .then(resp => {
+                        $rootScope.name = resp.data;
+                        console.log($rootScope.name);
+                        $rootScope.temp = $rootScope.name.kultur;
+                    });
+                $rootScope.ch = function(arg) {
+                    $rootScope.temp = $rootScope.name[arg];
+                    if ($rootScope.fuck == false) $rootScope.fuck = true;
+                }
+                $rootScope.loadArt = function(arg) {
+                    console.log(arg);
+                    jQuery('#art > .container').load(arg);
+                    $rootScope.fuck = !$rootScope.fuck;
+                }
+
+                
+                    
+                });
+
+            $('#menu > .container > a').click(function(){
+                console.log("entered");
+            	$('#menu > .container > a').removeClass('active');
+            	$(this).addClass('active');
+            });
+        </script>
+
+</body>
+</html>

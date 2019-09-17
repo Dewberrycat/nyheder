@@ -1,0 +1,30 @@
+{
+    "politik":[
+        {
+            "title": "Efter strejke, trusler og 'bøllemetoder' i lufthavn: Minister afviser at blande sig",
+            "desc": "описание политической новости 1",
+            "img": "politik/art0001.jpg",
+            "link": "politik/art0001.html"
+        },
+        {
+            "title": "Google zapłaci ogromną karę za niezapłacone podatki we Francji",
+            "desc": "описание политической новости 2",
+            "img": "politik/art0002.jpg",
+            "link": "politik/art0002.html"
+        }
+    ],
+    "kultur":[
+        {
+            "title": "Tällainen olisi Helsingin keskustatunneli: maan alle neljä kaistaa ja kuusi eritasoliittymää, suuaukkoja ympäri kantakaupunkia",
+            "desc": "описание культурной новости 1",
+            "img": "kultur/art0001.jpg",
+            "link": "kultur/art0001.html"
+        },
+        {
+            "title": "Prestižinėse Europos prieš JAV varžybose Dovilė Dzindzaletaitė-Kilty užėmė trečią vietą",
+            "desc": "описание культурной новости 2",
+            "img": "kultur/art0002.jpg",
+            "link": "kultur/art0002.html"
+        }
+    ]
+}

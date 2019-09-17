@@ -1,0 +1,127 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	position: relative;
+	transition: 0.3s;
+	font-family: sans-serif;
+}
+
+html, body {
+	height: 100%;
+	background: url(bottom_bg.jpg)
+}
+
+.container {
+	max-width: 900px;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+.active {
+	background-color: #648 !important;
+}
+
+#head {
+	background-color: #000;
+	background: url(background.png);
+	box-shadow: 0 1px 7px #000;
+}
+
+#logo {
+	display: block;
+	width: 217px;
+}
+
+#menu .container > a {
+	display: inline-block;
+	margin-right: 20px;
+	text-decoration: none;
+	color: #EEE;
+	background-color: #204;
+	padding: 5px 10px;
+}
+
+#content .container,
+#menu .container {
+	padding: 20px 20px 20px 0;
+}
+
+#content .container > div {
+	border: 1px solid #333;
+	box-shadow: 0 0 5px #222;
+	margin-bottom: 30px;
+	box-sizing: border-box;
+	max-width: 600px;
+}
+
+#content .container > div > a {
+	display: block;
+}
+
+#content .container > div > a > div {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	color: #EEE;
+	box-sizing: border-box;
+    padding: 10px;
+    font-size: 1.1em;
+    background-color: rgba(0,0,0,0.85);
+}
+
+#content .container > div > a > img {
+	display: block;
+	max-width: 100%;
+}
+
+#art .container h1 {
+	max-width: 700px;
+}
+
+#art .container img {
+	padding: 10px 0;
+}
+
+#art .container p {
+	max-width: 600px;
+	padding: 10px 0;
+	text-align: justify;
+}
+
+@media (max-width: 700px) {
+	.container {
+		max-width: 100%;
+	}
+
+	#content .container > div {
+		max-width: 100%;
+	}
+
+	#content .container {
+		padding: 0;
+	}
+
+	#art .container p {
+		box-sizing: border-box;
+		padding: 10px;
+	}
+
+	#art .container img {
+		max-width: 100%;
+	}
+
+	#menu .container > a {
+		display: block;
+		margin-right: 0;
+		padding: 10px 0;
+		text-align: center;
+		border-top: 1px solid #8c75b9;
+		border-bottom: 1px solid #330175;
+	}
+
+	#menu .container {
+		padding: 15px 0 25px 0;
+	}
+
+}
